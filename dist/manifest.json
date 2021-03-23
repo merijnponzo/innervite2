@@ -1,0 +1,16 @@
+{
+  "app.js": {
+    "file": "assets/app.e4953d0e.js",
+    "src": "app.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor.5d9d213a.js"
+    ],
+    "css": [
+      "assets/app.649826d8.css"
+    ]
+  },
+  "_vendor.5d9d213a.js": {
+    "file": "assets/vendor.5d9d213a.js"
+  }
+}
