@@ -34,9 +34,3 @@ export default {
   },
 }
 </script>
-<style>
-@layer components {
-  .btn-green {
-  }
-}
-</style>

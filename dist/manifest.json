@@ -1,6 +1,6 @@
 {
   "app.js": {
-    "file": "assets/app.caf9b6bd.js",
+    "file": "assets/app.49187962.js",
     "src": "app.js",
     "isEntry": true,
     "imports": [
@@ -9,9 +9,6 @@
     "dynamicImports": [
       "Pages/Default.vue",
       "Pages/Page.vue"
-    ],
-    "css": [
-      "assets/app.9b04cc5e.css"
     ]
   },
   "_vendor.3fd8adf0.js": {
@@ -29,7 +26,7 @@
     ]
   },
   "Pages/Page.vue": {
-    "file": "assets/Page.15fc4df9.js",
+    "file": "assets/Page.ccee154e.js",
     "src": "Pages/Page.vue",
     "isDynamicEntry": true,
     "imports": [

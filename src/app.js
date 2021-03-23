@@ -10,7 +10,7 @@ import { InertiaProgress } from '@inertiajs/progress'
 import axios from 'axios'
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
-import './index.css'
+// import './index.css'
 
 InertiaProgress.init()
 
