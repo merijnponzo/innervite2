@@ -1,6 +1,7 @@
 <template>
   <div class="dark md:container md:mx-auto">
-    <h1>runtime test twee</h1>
+    <h1>runtime test twee {{ msg }}</h1>
+    <slot />
   </div>
 </template>
 

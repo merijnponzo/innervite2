@@ -7,8 +7,8 @@
     </div>
     <v-runtime-template :template="template"></v-runtime-template>
     <h1>Vue {{ msg }}</h1>
-    <app-message>Hello {{ name }}!</app-message>
-    <button class="btn btn-green">Button bitch</button>
+    <message>Hello {{ myname }} ;-)</message>
+    <button class="btn btn-green">Button bitch {{ myname }}</button>
     <div class="bg-white dark:bg-gray-800 pa-6 my-1">
       <h1 class="blue-gray-900 dark:text-white text-blue-light">
         Dark mode is here!
@@ -30,14 +30,18 @@ export default {
     msg: String,
     default: '',
   },
-
   data() {
     return {
       count: 0,
+      myname: 'Merijn',
       template: `
-      <message>Hello {{ name }}!</message>
+      <message>Hello {{ myname }} baander</message>
     `,
     }
+  },
+  created() {
+    const el = document.getElementById('app')
+    const data = JSON.parse(el.dataset.page)
   },
 }
 </script>
