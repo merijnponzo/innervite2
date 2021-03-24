@@ -17,7 +17,6 @@ const { resolve } = require('path')
 const Dotenv = require('dotenv')
 Dotenv.config()
 
-const ASSET_URL = process.env.ASSET_URL || '/'
 // https://vitejs.dev/config
 export default {
   plugins: [
@@ -28,7 +27,7 @@ export default {
 
   // config
   root: 'src',
-  base: ASSET_URL,
+  base: process.env.ASSET_URL,
   build: {
     // output dir for production build
     outDir: resolve(__dirname, './dist'),
