@@ -1,22 +1,12 @@
 <?php
-// Helpers here serve as example. Change to suit your needs.
-
-// For a real-world example check here:
-// https://github.com/wp-bond/bond/blob/master/src/Tooling/Vite.php
-// https://github.com/wp-bond/boilerplate/tree/master/app/themes/boilerplate
-
-// on the links above there is also example for @vitejs/plugin-legacy
+// from https://github.com/andrefelipe/vite-php-setup
 
 
-// Some dev/prod mechanism would exist in your project
-// Handling manualy here, change to test both cases
-define('IS_DEVELOPMENT', false);
+define('IS_DEVELOPMENT', true);
 
 
 function vite($entry): string
 {
-
-    
     return jsTag($entry)
         . jsPreloadImports($entry)
         . cssTag($entry);

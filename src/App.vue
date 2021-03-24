@@ -45,3 +45,6 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+@import './ponzu/src/scss/ponzu.scss';
+</style>
