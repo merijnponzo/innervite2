@@ -10,11 +10,13 @@
 
 // Some dev/prod mechanism would exist in your project
 // Handling manualy here, change to test both cases
-define('IS_DEVELOPMENT', true);
+define('IS_DEVELOPMENT', false);
 
 
 function vite($entry): string
 {
+
+    
     return jsTag($entry)
         . jsPreloadImports($entry)
         . cssTag($entry);
@@ -25,10 +27,11 @@ function vite($entry): string
 
 function jsTag(string $entry): string
 {
-    $url = IS_DEVELOPMENT
-        ? 'http://localhost:3000/' . $entry
-        : assetUrl($entry);
-
+    if (IS_DEVELOPMENT) {
+        $url = 'http://localhost:3000/' . $entry;
+    }else {
+        $url = assetUrl($entry);
+    }
     if (!$url) {
         return '';
     }
@@ -41,15 +44,15 @@ function jsPreloadImports(string $entry): string
 {
     if (IS_DEVELOPMENT) {
         return '';
+    }else{
+        $res = '';
+        foreach (importsUrls($entry) as $url) {
+            $res .= '<link rel="modulepreload" href="'
+                . get_template_directory_uri().$url
+                . '">';
+        }
+        return $res;
     }
-
-    $res = '';
-    foreach (importsUrls($entry) as $url) {
-        $res .= '<link rel="modulepreload" href="'
-            . $url
-            . '">';
-    }
-    return $res;
 }
 
 function cssTag(string $entry): string
@@ -57,15 +60,15 @@ function cssTag(string $entry): string
     // not needed on dev, it's inject by Vite
     if (IS_DEVELOPMENT) {
         return '';
+    }else{
+        $tags = '';
+        foreach (cssUrls($entry) as $url) {
+            $tags .= '<link rel="stylesheet" href="'
+                .$url
+                . '">';
+        }
+        return $tags;
     }
-
-    $tags = '';
-    foreach (cssUrls($entry) as $url) {
-        $tags .= '<link rel="stylesheet" href="'
-            . $url
-            . '">';
-    }
-    return $tags;
 }
 
 
@@ -83,7 +86,7 @@ function assetUrl(string $entry): string
     $manifest = getManifest();
 
     return isset($manifest[$entry])
-        ? '/dist/' . $manifest[$entry]['file']
+        ? get_template_directory_uri().'/dist/' . $manifest[$entry]['file']
         : '';
 }
 
@@ -112,3 +115,9 @@ function cssUrls(string $entry): array
     }
     return $urls;
 }
+
+function ponzo_enqueue(){
+    
+}
+
+add_action('wp_enqueue_scripts', 'ponzo_enqueue');

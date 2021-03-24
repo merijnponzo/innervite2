@@ -14,6 +14,10 @@ import vue from '@vitejs/plugin-vue'
 import liveReload from 'vite-plugin-live-reload'
 const { resolve } = require('path')
 
+const Dotenv = require('dotenv')
+Dotenv.config()
+
+const ASSET_URL = process.env.ASSET_URL || '/'
 // https://vitejs.dev/config
 export default {
   plugins: [
@@ -24,12 +28,11 @@ export default {
 
   // config
   root: 'src',
-  base: '/',
+  base: ASSET_URL,
   build: {
     // output dir for production build
     outDir: resolve(__dirname, './dist'),
     emptyOutDir: true,
-
     // emit manifest so PHP can find the hashed files
     manifest: true,
 
