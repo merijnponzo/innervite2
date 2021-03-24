@@ -1,16 +1,18 @@
 <template>
   <div class="dark md:container md:mx-auto">
-    <h1>runtime test twee {{ msg }}</h1>
+    <h1>Tabs content {{ tabs }}</h1>
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Message',
+  name: 'Tab',
   props: {
-    msg: String,
-    default: '',
+    tabs: Object,
+    default: function () {
+      return {}
+    },
   },
 
   data() {

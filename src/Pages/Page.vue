@@ -1,34 +1,33 @@
 <template>
-  <div class="dark md:container md:mx-auto" v-if="loaded">
-    <h2>This is a page template</h2>
-    <h1 class="text-xl">{{ title }}</h1>
-    <div v-html="content"></div>
-    <h4>RUntime from here</h4>
-    <v-runtime-template :template="content"></v-runtime-template>
-  </div>
+  <Layout>
+    <main class="row">
+      <div class="c12">
+        <runtime-gutenberg :template="content"></runtime-gutenberg>
+        <button class="btn">Test</button>
+      </div>
+    </main>
+  </Layout>
 </template>
 
 <script>
-import VRuntimeTemplate from 'vue3-runtime-template'
-import Message from '../Message.vue'
+import RuntimeGutenberg from 'vue3-runtime-template'
+import { nextTick } from 'vue'
+
 export default {
   name: 'Page',
   props: ['title', 'content'],
-  components: { Message, VRuntimeTemplate },
+  components: { RuntimeGutenberg },
   data() {
-    return {
-      loaded: false,
-    }
+    return {}
   },
   mounted() {
-    console.log('page is mounted?')
-    console.log(this.props)
-    this.$nextTick(() => (this.loaded = true))
+    // this.$nextTick(() => (this.loaded = true))
   },
 }
 </script>
 <style lang="scss">
-html {
-  background: red;
+.content {
+  width: 100%;
+  display: block;
 }
 </style>

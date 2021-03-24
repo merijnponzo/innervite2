@@ -10,7 +10,7 @@
 // on production everything will work just fine
 
 import vue from '@vitejs/plugin-vue'
-
+import { defineConfig, loadEnv } from 'vite'
 import liveReload from 'vite-plugin-live-reload'
 const { resolve } = require('path')
 
@@ -18,49 +18,52 @@ const Dotenv = require('dotenv')
 Dotenv.config()
 
 // https://vitejs.dev/config
-export default {
-  plugins: [
-    vue(),
-    liveReload(__dirname + '/(app|config|views)/**/*.php'),
-    // edit according to your source code
-  ],
+export default defineConfig(({ mode }) => {
+  Object.assign(process.env, loadEnv(mode, process.cwd()))
+  return {
+    plugins: [
+      vue(),
+      liveReload(__dirname + '/(app|config|views)/**/*.php'),
+      // edit according to your source code
+    ],
 
-  // config
-  root: 'src',
-  base: process.env.ASSET_URL,
-  build: {
-    // output dir for production build
-    outDir: resolve(__dirname, './dist'),
-    emptyOutDir: true,
-    // emit manifest so PHP can find the hashed files
-    manifest: true,
+    // config
+    root: 'src',
+    base: process.env.ASSET_URL,
+    build: {
+      // output dir for production build
+      outDir: resolve(__dirname, './dist'),
+      emptyOutDir: true,
+      // emit manifest so PHP can find the hashed files
+      manifest: true,
 
-    // esbuild target
-    target: 'es2018',
+      // esbuild target
+      target: 'es2018',
 
-    // our entry
-    rollupOptions: {
-      input: '/app.js',
+      // our entry
+      rollupOptions: {
+        input: '/app.js',
+      },
     },
-  },
 
-  server: {
-    // required to load scripts from custom host
-    cors: true,
-    // we need a strict port to match on PHP side
-    // change freely, but update on PHP to match the same port
-    strictPort: true,
-    port: 3000,
-  },
-
-  // required for in-browser template compilation
-  // https://v3.vuejs.org/guide/installation.html#with-a-bundler
-  resolve: {
-    alias: {
-      vue: 'vue/dist/vue.esm-bundler.js',
+    server: {
+      // required to load scripts from custom host
+      cors: true,
+      // we need a strict port to match on PHP side
+      // change freely, but update on PHP to match the same port
+      strictPort: true,
+      port: 3000,
     },
-  },
-  optimizeDeps: {
-    include: ['vue', 'axios'],
-  },
-}
+
+    // required for in-browser template compilation
+    // https://v3.vuejs.org/guide/installation.html#with-a-bundler
+    resolve: {
+      alias: {
+        vue: 'vue/dist/vue.esm-bundler.js',
+      },
+    },
+    optimizeDeps: {
+      include: ['vue', 'axios'],
+    },
+  }
+})
