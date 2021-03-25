@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <header>
     <nav>
       <h1>{{ $page.props.site.name }}</h1>
@@ -10,6 +11,9 @@
       </ul>
     </nav>
   </header>
+=======
+  <header>header</header>
+>>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6
 </template>
 
 <script>

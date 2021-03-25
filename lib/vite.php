@@ -2,6 +2,17 @@
 // from https://github.com/andrefelipe/vite-php-setup
 
 
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:lib/vite.php
+========
+// on the links above there is also example for @vitejs/plugin-legacy
+
+
+// Some dev/prod mechanism would exist in your project
+// Handling manualy here, change to test both cases
+>>>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6:helpers.php
+>>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6
 define('IS_DEVELOPMENT', true);
 
 
@@ -66,8 +77,13 @@ function cssTag(string $entry): string
 
 function getManifest(): array
 {
+<<<<<<< HEAD
     $content = file_get_contents(get_template_directory() . '/dist/manifest.json');
     
+=======
+    $content = file_get_contents(__DIR__ . '/dist/manifest.json');
+
+>>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6
     return json_decode($content, true);
 }
 
@@ -100,7 +116,11 @@ function cssUrls(string $entry): array
 
     if (!empty($manifest[$entry]['css'])) {
         foreach ($manifest[$entry]['css'] as $file) {
+<<<<<<< HEAD
             $urls[] = get_template_directory_uri().'/dist/' . $file;
+=======
+            $urls[] = '/dist/' . $file;
+>>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6
         }
     }
     return $urls;

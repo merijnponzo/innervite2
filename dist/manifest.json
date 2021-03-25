@@ -1,10 +1,18 @@
 {
   "app.js": {
+<<<<<<< HEAD
     "file": "assets/app.8564b122.js",
     "src": "app.js",
     "isEntry": true,
     "imports": [
       "_vendor.aefb0e15.js"
+=======
+    "file": "assets/app.95aba7a5.js",
+    "src": "app.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor.3f13915e.js"
+>>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6
     ],
     "dynamicImports": [
       "Pages/Default.vue",
@@ -14,6 +22,7 @@
       "assets/app.e8c36590.css"
     ]
   },
+<<<<<<< HEAD
   "_vendor.aefb0e15.js": {
     "file": "assets/vendor.aefb0e15.js"
   },
@@ -31,6 +40,31 @@
     "isDynamicEntry": true,
     "imports": [
       "_vendor.aefb0e15.js"
+=======
+  "_vendor.3f13915e.js": {
+    "file": "assets/vendor.3f13915e.js"
+  },
+  "Pages/Default.vue": {
+    "file": "assets/Default.6014a725.js",
+    "src": "Pages/Default.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.3f13915e.js"
+    ],
+    "css": [
+      "assets/Default.4031ace1.css"
+    ]
+  },
+  "Pages/Page.vue": {
+    "file": "assets/Page.e825f457.js",
+    "src": "Pages/Page.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.3f13915e.js"
+    ],
+    "css": [
+      "assets/Page.4560d657.css"
+>>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6
     ]
   }
 }
