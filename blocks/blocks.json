@@ -1,9 +1,0 @@
-{
-  "name": "columns",
-  "themes":{
-    "darkel":{
-      "width":4,
-      "buttonclass":"one"
-    }
-  }
-}

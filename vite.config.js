@@ -11,13 +11,9 @@
 
 // vue plugin
 import vue from '@vitejs/plugin-vue'
-<<<<<<< HEAD
 // needed for .env
 import { defineConfig, loadEnv } from 'vite'
 // live reload php
-=======
-import { defineConfig, loadEnv } from 'vite'
->>>>>>> ce5b66a743ac0551e7843469277ffa2291d6d6e6
 import liveReload from 'vite-plugin-live-reload'
 // resolver
 const { resolve } = require('path')

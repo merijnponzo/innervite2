@@ -35,4 +35,3 @@ if(isset($themes[$attributes['blocktheme']])){
     </Tab>
     <?php endforeach; ?>
 </Tabs>
-</div>

@@ -1,12 +1,22 @@
 <?php
-// from https://github.com/andrefelipe/vite-php-setup
+// Helpers here serve as example. Change to suit your needs.
+
+// For a real-world example check here:
+// https://github.com/wp-bond/bond/blob/master/src/Tooling/Vite.php
+// https://github.com/wp-bond/boilerplate/tree/master/app/themes/boilerplate
+
+// on the links above there is also example for @vitejs/plugin-legacy
 
 
+// Some dev/prod mechanism would exist in your project
+// Handling manualy here, change to test both cases
 define('IS_DEVELOPMENT', true);
 
 
 function vite($entry): string
 {
+
+    
     return jsTag($entry)
         . jsPreloadImports($entry)
         . cssTag($entry);
@@ -66,8 +76,8 @@ function cssTag(string $entry): string
 
 function getManifest(): array
 {
-    $content = file_get_contents(get_template_directory() . '/dist/manifest.json');
-    
+    $content = file_get_contents(__DIR__ . '/dist/manifest.json');
+
     return json_decode($content, true);
 }
 
@@ -100,7 +110,7 @@ function cssUrls(string $entry): array
 
     if (!empty($manifest[$entry]['css'])) {
         foreach ($manifest[$entry]['css'] as $file) {
-            $urls[] = get_template_directory_uri().'/dist/' . $file;
+            $urls[] = '/dist/' . $file;
         }
     }
     return $urls;
