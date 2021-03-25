@@ -9,24 +9,40 @@
 // ln -s {path_to_vite}/src/assets {path_to_public_html}/assets
 // on production everything will work just fine
 
+// vue plugin
 import vue from '@vitejs/plugin-vue'
+// needed for .env
 import { defineConfig, loadEnv } from 'vite'
+// live reload php
 import liveReload from 'vite-plugin-live-reload'
+// resolver
 const { resolve } = require('path')
-
-const Dotenv = require('dotenv')
-Dotenv.config()
+// auto import vue components
+import ViteComponents from 'vite-plugin-components'
 
 // https://vitejs.dev/config
 export default defineConfig(({ mode }) => {
-  Object.assign(process.env, loadEnv(mode, process.cwd()))
+  require('dotenv').config({ path: `./.env.${mode}` })
+
   return {
     plugins: [
       vue(),
-      liveReload(__dirname + '/(app|config|views)/**/*.php'),
+      ViteComponents({
+        // relative paths to the directory to search for components.
+        dirs: ['src/components'],
+        // valid file extensions for components.
+        extensions: ['vue'],
+        // search for subdirectories
+        deep: true,
+        // Allow subdirectories as namespace prefix for components.
+        directoryAsNamespace: false,
+        // Subdirectory paths for ignoring namespace prefixes
+        // works when `directoryAsNamespace: true`
+        globalNamespaces: [],
+      }),
+      liveReload(__dirname + '/**/*.php'),
       // edit according to your source code
     ],
-
     // config
     root: 'src',
     base: process.env.ASSET_URL,

@@ -1,6 +1,6 @@
 {
   "app.js": {
-    "file": "assets/app.0c2f456a.js",
+    "file": "assets/app.8564b122.js",
     "src": "app.js",
     "isEntry": true,
     "imports": [
@@ -11,32 +11,26 @@
       "Pages/Page.vue"
     ],
     "css": [
-      "assets/app.560fd1fc.css"
+      "assets/app.e8c36590.css"
     ]
   },
   "_vendor.aefb0e15.js": {
     "file": "assets/vendor.aefb0e15.js"
   },
   "Pages/Default.vue": {
-    "file": "assets/Default.3b4f6c4c.js",
+    "file": "assets/Default.dab28be1.js",
     "src": "Pages/Default.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.aefb0e15.js"
-    ],
-    "css": [
-      "assets/Default.4031ace1.css"
     ]
   },
   "Pages/Page.vue": {
-    "file": "assets/Page.4730ce70.js",
+    "file": "assets/Page.5ac26cb1.js",
     "src": "Pages/Page.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.aefb0e15.js"
-    ],
-    "css": [
-      "assets/Page.6fecab48.css"
     ]
   }
 }

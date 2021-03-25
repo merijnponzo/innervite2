@@ -19,8 +19,6 @@ const pages = import.meta.glob('./Pages/**/*.vue')
 
 // Layout
 import Layout from './Shared/Layout.vue'
-import Tabs from './components/ponzu/Tabs.vue'
-import Tab from './components/ponzu/Tab.vue'
 
 createApp({
   render: () =>
@@ -40,6 +38,4 @@ createApp({
   .mixin({ methods: {} })
   .use(InertiaPlugin)
   .component('Layout', Layout)
-  .component('Tabs', Tabs)
-  .component('Tab', Tab)
   .mount(app)

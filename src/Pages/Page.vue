@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <h1>YES</h1>
     <main class="row">
       <div class="c12">
         <runtime-gutenberg :template="content"></runtime-gutenberg>
