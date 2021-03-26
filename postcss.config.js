@@ -1,10 +1,9 @@
-const purgecss = require('@fullhuman/postcss-purgecss')
-module.exports = {
-  plugins: [
-    require('rfs')({ baseValue: 16 }),
-    require('autoprefixer'),
-    purgecss({
+//const purgecss = require('@fullhuman/postcss-purgecss')
+/*
+ purgecss({
       content: ['./src/*.vue'],
     }),
-  ],
+*/
+module.exports = {
+  plugins: [require('rfs')({ baseValue: 16 }), require('autoprefixer')],
 }

@@ -1,7 +1,15 @@
 <template>
-  <div class="dark md:container md:mx-auto">
-    {{ theme.btn }}
-    <slot />
+  <div :class="[theme.classnames]">
+    <div class="tab__nav">
+      <div v-for="(tab, t) in content">
+        {{ tab.tabtitle }}
+      </div>
+    </div>
+    <div class="tab__content">
+      <div v-for="(tab, t) in content">
+        <div v-html="tab.text" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,6 +18,12 @@ export default {
   name: 'Tabs',
   props: {
     theme: {
+      type: [Object, String],
+      default: function () {
+        return {}
+      },
+    },
+    content: {
       type: [Object, String],
       default: function () {
         return {}

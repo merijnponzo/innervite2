@@ -12,6 +12,3 @@ export default {
   name: 'Footer',
 }
 </script>
-<style lang="scss">
-@import './ponzu/src/scss/ponzu.scss';
-</style>

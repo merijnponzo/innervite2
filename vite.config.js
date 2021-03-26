@@ -17,6 +17,9 @@ import { defineConfig, loadEnv } from 'vite'
 import liveReload from 'vite-plugin-live-reload'
 // resolver
 const { resolve } = require('path')
+// auto import vue components
+import ViteComponents from 'vite-plugin-components'
+
 // https://vitejs.dev/config
 export default defineConfig(({ mode }) => {
   require('dotenv').config({ path: `./.env.${mode}` })
@@ -24,6 +27,11 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       vue(),
+      ViteComponents({
+        dirs: ['src/components'],
+        extensions: ['vue'],
+        deep: true,
+      }),
       liveReload(__dirname + '/**/*.php'),
       // edit according to your source code
     ],

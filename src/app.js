@@ -10,10 +10,7 @@ import { InertiaProgress } from '@inertiajs/progress'
 import axios from 'axios'
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
-// import './index.css'
-
 InertiaProgress.init()
-
 const app = document.getElementById('app')
 const pages = import.meta.glob('./pages/**/*.vue')
 

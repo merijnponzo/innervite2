@@ -2,6 +2,7 @@
     "blocks":{
         "tabs":{
             "dark":{
+                "classnames":"wrap",
                 "btn":"one"
             }
         },

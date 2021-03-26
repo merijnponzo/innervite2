@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <div>
     <Header />
     <slot></slot>
     <Footer />
-  </main>
+  </div>
 </template>
 
 <script>
@@ -18,3 +18,6 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+@import './ponzu/src/scss/ponzu.scss';
+</style>

@@ -34,6 +34,23 @@ class Ponzo{
             return [];
         }
     }
+    // create escaped html entities (two levels deep)
+    public static function blockSafeHtml($unescapedAr,$needle){
+        $ar = $unescapedAr;
+        foreach( $ar as $key => $row ):
+            if($key === $needle){
+                $ar[$key] = htmlentities($row);
+            }
+            foreach( $row as $nested_key => $nested_row ):
+                if ($nested_key === $needle) {
+                    $ar[$key][$nested_key] = htmlentities($nested_row);
+                }
+            endforeach;
+        endforeach;
+        return $ar;
+    }
+
+
     public static function init(){
         add_action( 'init',array( 'Ponzo', 'loadJson' ) );
     }
