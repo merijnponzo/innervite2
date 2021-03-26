@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => {
     base: process.env.ASSET_URL,
     build: {
       // output dir for production build
-      outDir: resolve(__dirname, './dist'),
+      outDir: resolve(__dirname, './app/dist'),
       emptyOutDir: true,
       // emit manifest so PHP can find the hashed files
       manifest: true,
