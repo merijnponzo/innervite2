@@ -1,6 +1,6 @@
 {
   "app.js": {
-    "file": "assets/app.aebac050.js",
+    "file": "assets/app.193131b1.js",
     "src": "app.js",
     "isEntry": true,
     "imports": [
@@ -8,26 +8,55 @@
     ],
     "dynamicImports": [
       "pages/Default.vue",
-      "pages/Page.vue"
+      "pages/Page.vue",
+      "pages/Filmography/Index.vue",
+      "pages/Filmography/Single.vue"
     ],
     "css": [
-      "assets/app.e8c36590.css"
+      "assets/app.2a57ddd0.css"
     ]
+  },
+  "gutenberg.js": {
+    "file": "assets/gutenberg.2f61d290.js",
+    "src": "gutenberg.js",
+    "isEntry": true
   },
   "_vendor.aefb0e15.js": {
     "file": "assets/vendor.aefb0e15.js"
   },
   "pages/Default.vue": {
-    "file": "assets/Default.7a9d0a2d.js",
+    "file": "assets/Default.d932da75.js",
     "src": "pages/Default.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.aefb0e15.js"
+    ],
+    "css": [
+      "assets/Default.4031ace1.css"
+    ]
+  },
+  "pages/Page.vue": {
+    "file": "assets/Page.cb188081.js",
+    "src": "pages/Page.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.aefb0e15.js"
+    ],
+    "css": [
+      "assets/Page.6fecab48.css"
+    ]
+  },
+  "pages/Filmography/Index.vue": {
+    "file": "assets/Index.191fca6d.js",
+    "src": "pages/Filmography/Index.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.aefb0e15.js"
     ]
   },
-  "pages/Page.vue": {
-    "file": "assets/Page.e5ddd716.js",
-    "src": "pages/Page.vue",
+  "pages/Filmography/Single.vue": {
+    "file": "assets/Single.c06265b0.js",
+    "src": "pages/Filmography/Single.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.aefb0e15.js"

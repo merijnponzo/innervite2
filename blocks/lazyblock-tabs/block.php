@@ -6,6 +6,4 @@ $content = Ponzo::blockSafeHtml($attributes['tabs'],'text');
 :theme='<?=json_encode($theme);?>'
 :content='<?=json_encode($content);?>'
 >
-
 </Tabs>
-   

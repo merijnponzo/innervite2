@@ -25,4 +25,13 @@ foreach ($theme_files as $file) {
 // declare ponzo theme class
 new Ponzo();
 Ponzo::init();
+
+
+function my_custom_css()
+{
+echo '<script type="module" crossorigin src="http://localhost:3000/gutenberg.js"></script>';
+}
+add_action('admin_head', 'my_custom_css');
+
+
 ?>

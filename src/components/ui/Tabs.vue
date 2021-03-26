@@ -35,5 +35,8 @@ export default {
       count: 0,
     }
   },
+  mounted() {
+    console.log('tabs are mounted')
+  },
 }
 </script>

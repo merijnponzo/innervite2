@@ -1,0 +1,1 @@
+import{r as t,o as n,c as e,w as a,a as l,t as o}from"./vendor.aefb0e15.js";const r={name:"Default",props:["title","content"],data:()=>({})},s=l("h2",null,"test",-1);r.render=function(r,u,i,d,c,f){const p=t("Layout");return n(),e(p,null,{default:a((()=>[l("div",null,[s,l("h1",null,o(i.title),1),l("div",{innerHTML:i.content},null,8,["innerHTML"])])])),_:1})};export default r;

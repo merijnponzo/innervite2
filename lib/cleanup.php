@@ -91,7 +91,7 @@ function remove_block_css() {
     wp_dequeue_style( 'wp-block-library' );
   }
   
-  add_action( 'wp_print_styles', 'remove_block_css', 100 );
+// add_action( 'wp_print_styles', 'remove_block_css', 100 );
 
 
   /** 

@@ -14,7 +14,7 @@ function register_posttypes() {
             'icon'=>'dashicons-list-view'
         ]
     ];
-
+    
     foreach($ponzo_register_cpt as $post_type){
         $labels = array(
             'name'               => _x( $post_type['slug'], 'post type general name' ),
@@ -89,6 +89,7 @@ function register_posttypes() {
 	}
 
     // disable gutenberg for post types
+    /*
     function my_post_type_filter( $use_block_editor, $post_type ) {
         foreach($ponzo_posttypes as $registered_post_type){
             if ( $registered_post_type['slug'] === $post_type ) {
@@ -100,6 +101,7 @@ function register_posttypes() {
 		return $use_block_editor;
 	}
 	add_filter( 'use_block_editor_for_post_type', 'my_post_type_filter', 10, 2 );
+    */
 }
 
 //QUERY VARS

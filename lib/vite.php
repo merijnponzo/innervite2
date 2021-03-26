@@ -2,7 +2,7 @@
 // from https://github.com/andrefelipe/vite-php-setup
 
 
-define('IS_DEVELOPMENT', true);
+define('IS_DEVELOPMENT', false);
 
 
 function vite($entry): string
