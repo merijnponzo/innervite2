@@ -2,7 +2,7 @@
 // load theme lib files
 $theme_files = [
     'lib/vite.php',
-    'lib/lazyblocks.php',
+    'lib/ponzo.php',
     'lib/cleanup.php',
     'theme/inertia.php',
     'theme/navigation.php',
@@ -14,4 +14,14 @@ foreach ($theme_files as $file) {
     }
     require_once $filepath;
 }
+
+// declare ponzo theme class
+new Ponzo();
+Ponzo::init();
+
+// load composer
+if (!file_exists($autoload = __DIR__ . '/vendor/autoload.php')) {
+    die('This theme requires composer autoload, please run "composer install"');
+}
+require_once $autoload;
 ?>

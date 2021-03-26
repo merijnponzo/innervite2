@@ -1,30 +1,5 @@
 <?php
-// tab themes
-$themes = [
-  "dark" => [
-      "button" => "one",
-      "themecolor"=>"two",
-      "columnwidth" => 4,
-      "img"=>[
-          "orientation"=>"landscape",
-          "crop"=>"square"
-      ],
-    ],
-    "light" => [
-        "button" => "one",
-        "themecolor"=>"two",
-        "columnwidth" => 4,
-        "img"=>[
-            "orientation"=>"landscape",
-            "crop"=>"square"
-        ]
-    ]
-];
-// add theme
-$theme = null;
-if(isset($themes[$attributes['blocktheme']])){
-    $theme = $themes[$attributes['blocktheme']];
-}
+$theme = Ponzo::blockTheme('tabs', $attributes['blocktheme']);
 ?>
 <Tabs :theme='<?=json_encode($theme);?>'>
     <?php foreach( $attributes['tabs'] as $e ): ?>

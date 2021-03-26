@@ -1,9 +1,6 @@
 <template>
   <div class="dark md:container md:mx-auto">
-    <h1>Tabs! {{ tabs }}</h1>
-    <pre>
-    {{ theme }}
-    </pre>
+    {{ theme.btn }}
     <slot />
   </div>
 </template>
@@ -12,16 +9,10 @@
 export default {
   name: 'Tabs',
   props: {
-    tabs: {
-      type: Object,
+    theme: {
+      type: [Object, String],
       default: function () {
         return {}
-      },
-    },
-    theme: {
-      type: Object,
-      default: function () {
-        return ''
       },
     },
   },

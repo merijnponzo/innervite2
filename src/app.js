@@ -15,17 +15,19 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 InertiaProgress.init()
 
 const app = document.getElementById('app')
-const pages = import.meta.glob('./Pages/**/*.vue')
+const pages = import.meta.glob('./pages/**/*.vue')
 
 // Layout
-import Layout from './Shared/Layout.vue'
+import Layout from './shared/Layout.vue'
+import Tabs from './components/ui/Tabs.vue'
+import Tab from './components/ui/Tab.vue'
 
 createApp({
   render: () =>
     h(InertiaApp, {
       initialPage: JSON.parse(app.dataset.page),
       resolveComponent: (name) => {
-        const importPage = pages[`./Pages/${name}.vue`]
+        const importPage = pages[`./pages/${name}.vue`]
         if (!importPage) {
           throw new Error(
             `Unknown page ${name}. Is it located under Pages with a .vue extension?`
@@ -38,4 +40,6 @@ createApp({
   .mixin({ methods: {} })
   .use(InertiaPlugin)
   .component('Layout', Layout)
+  .component('Tabs', Tabs)
+  .component('Tab', Tab)
   .mount(app)

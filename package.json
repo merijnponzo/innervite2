@@ -18,7 +18,6 @@
     "rfs": "^9.0.3",
     "sass": "^1.32.8",
     "tailwindcss-rfs": "^4.0.0",
-    "vite-plugin-components": "^0.8.3",
     "vite-plugin-live-reload": "^2.0.0",
     "vue": "^3.0.5",
     "vue3-runtime-template": "^1.0.1"

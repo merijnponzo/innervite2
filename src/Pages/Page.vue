@@ -1,23 +1,25 @@
 <template>
   <Layout>
-    <h1>YES</h1>
+    <h1>YES PAGE</h1>
+    <Tabs>
+      <Tab>This is a tab</Tab>
+    </Tabs>
     <main class="row">
       <div class="c12">
-        <runtime-gutenberg :template="content"></runtime-gutenberg>
-        <button class="btn">Test</button>
+        <Gutenblocks :content="content" />
       </div>
     </main>
   </Layout>
 </template>
 
 <script>
-import RuntimeGutenberg from 'vue3-runtime-template'
+import Gutenblocks from '../components/Gutenblocks.vue'
 import { nextTick } from 'vue'
 
 export default {
   name: 'Page',
   props: ['title', 'content'],
-  components: { RuntimeGutenberg },
+  components: { Gutenblocks },
   data() {
     return {}
   },

@@ -17,9 +17,6 @@ import { defineConfig, loadEnv } from 'vite'
 import liveReload from 'vite-plugin-live-reload'
 // resolver
 const { resolve } = require('path')
-// auto import vue components
-import ViteComponents from 'vite-plugin-components'
-
 // https://vitejs.dev/config
 export default defineConfig(({ mode }) => {
   require('dotenv').config({ path: `./.env.${mode}` })
@@ -27,19 +24,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       vue(),
-      ViteComponents({
-        // relative paths to the directory to search for components.
-        dirs: ['src/components'],
-        // valid file extensions for components.
-        extensions: ['vue'],
-        // search for subdirectories
-        deep: true,
-        // Allow subdirectories as namespace prefix for components.
-        directoryAsNamespace: false,
-        // Subdirectory paths for ignoring namespace prefixes
-        // works when `directoryAsNamespace: true`
-        globalNamespaces: [],
-      }),
       liveReload(__dirname + '/**/*.php'),
       // edit according to your source code
     ],
