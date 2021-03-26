@@ -4,8 +4,8 @@
       <h1>{{ $page.props.site.name }}</h1>
       <p>{{ $page.props.site.description }}</p>
       <ul>
-        <li v-for="item in $page.props.primary_menu" :key="item.id">
-          <inertia-link :href="item.link">{{ item.name }}</inertia-link>
+        <li v-for="item in $page.props.navigation.main">
+          <inertia-link :href="item.slug">{{ item.title }}</inertia-link>
         </li>
       </ul>
     </nav>

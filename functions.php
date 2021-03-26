@@ -1,12 +1,19 @@
 <?php
+// load composer
+if (!file_exists($autoload = __DIR__ . '/vendor/autoload.php')) {
+    die('This theme requires composer autoload, please run "composer install"');
+}
+require_once $autoload;
 // load theme lib files
 $theme_files = [
+    'theme/post-types.php',
     'lib/vite.php',
     'lib/ponzo.php',
-    'lib/cleanup.php',
+    'lib/helpers.php',    
     'theme/inertia.php',
     'theme/navigation.php',
-    'theme/settings.php'
+    'theme/settings.php',
+    'lib/cleanup.php',
 ];
 foreach ($theme_files as $file) {
     if (!$filepath = locate_template($file)) {
@@ -18,10 +25,4 @@ foreach ($theme_files as $file) {
 // declare ponzo theme class
 new Ponzo();
 Ponzo::init();
-
-// load composer
-if (!file_exists($autoload = __DIR__ . '/vendor/autoload.php')) {
-    die('This theme requires composer autoload, please run "composer install"');
-}
-require_once $autoload;
 ?>

@@ -1,6 +1,6 @@
 <template>
   <div :class="[theme.classnames]">
-    <div class="tab__nav">
+    <div class="tab__nav" @click="">
       <div v-for="(tab, t) in content">
         {{ tab.tabtitle }}
       </div>

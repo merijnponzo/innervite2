@@ -1,9 +1,5 @@
 <template>
   <Layout>
-    <h1>YES PAGE</h1>
-    <Tabs>
-      <Tab>This is a tab</Tab>
-    </Tabs>
     <main class="row">
       <div class="c12">
         <Gutenblocks :content="content" />

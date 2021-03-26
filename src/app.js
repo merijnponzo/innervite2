@@ -17,7 +17,7 @@ const pages = import.meta.glob('./pages/**/*.vue')
 // Layout
 import Layout from './shared/Layout.vue'
 import Tabs from './components/ui/Tabs.vue'
-import Tab from './components/ui/Tab.vue'
+import Visual from './components/ui/Visual.vue'
 
 createApp({
   render: () =>
@@ -38,5 +38,5 @@ createApp({
   .use(InertiaPlugin)
   .component('Layout', Layout)
   .component('Tabs', Tabs)
-  .component('Tab', Tab)
+  .component('Visual', Visual)
   .mount(app)
