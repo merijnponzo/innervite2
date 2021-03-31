@@ -6,7 +6,6 @@
 
 <script>
 import RuntimeGutenberg from 'vue3-runtime-template'
-
 export default {
   name: 'Gutenblocks',
   components: { RuntimeGutenberg },

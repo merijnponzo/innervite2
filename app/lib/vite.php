@@ -1,8 +1,8 @@
 <?php
 // from https://github.com/andrefelipe/vite-php-setup
 
-
-define('IS_DEVELOPMENT', false);
+// force development
+define('IS_DEVELOPMENT', true);
 
 
 function vite($entry): string

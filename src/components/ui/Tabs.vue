@@ -2,7 +2,7 @@
   <div :class="[theme.classnames]">
     <div class="tab__nav" @click="">
       <div v-for="(tab, t) in content">
-        {{ tab.tabtitle }}
+        {{ tab.title }}
       </div>
     </div>
     <div class="tab__content">

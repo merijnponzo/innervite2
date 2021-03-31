@@ -8,12 +8,12 @@ require_once $autoload;
 $theme_files = [
     'theme/post-types.php',
     'lib/vite.php',
-    'lib/ponzo.php',
     'lib/helpers.php',    
     'theme/inertia.php',
     'theme/navigation.php',
     'theme/settings.php',
     'lib/cleanup.php',
+    'ponzoblocks/ponzoblocks.php',
 ];
 foreach ($theme_files as $file) {
     if (!$filepath = locate_template($file)) {
@@ -23,8 +23,8 @@ foreach ($theme_files as $file) {
 }
 
 // declare ponzo theme class
-new Ponzo();
-Ponzo::init();
+new Ponzoblocks();
+Ponzoblocks::init();
 
 
 function my_custom_css()
